@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const tasksRouter = require('./routes/tasks');
 
 const user = 'todoadmin';
 const password = 'Gj8MfTvf';
@@ -28,6 +28,5 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
+app.use('/tasks', tasksRouter);
 module.exports = app;
