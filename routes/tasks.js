@@ -8,4 +8,4 @@ router.get('/', getAllTasks);
 router.put('update/:id', updateTask);
 router.delete('/delete/:id', deleteTask);
 
-export default router;
+module.exports = router;
