@@ -2,9 +2,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
-const tasksRouter = require('./routes/tasks');
+var tasksRouter = require('./routes/tasks');
 
 const user = 'todoadmin';
 const password = 'Gj8MfTvf';
