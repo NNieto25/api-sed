@@ -6,6 +6,19 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const user = 'todoadmin';
+const password = 'Gj8MfTvf';
+const dbname = 'todo-list';
+const authsource = 'admin';
+
+mongoose.connect(`mongodb://${user}:${password}@localhost/${dbname}?authSource=${authsource}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'mongodb connection error:'));
+
 var app = express();
 
 app.use(logger('dev'));
