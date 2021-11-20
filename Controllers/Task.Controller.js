@@ -22,7 +22,7 @@ const taskController = {
 
     getAllTasks: async (req, res) => {
         try {
-            const tasks = await Activity.find({}, {}, {
+            const tasks = await Task.find({}, {}, {
                 sort: '-createdAt'
             });
             res.json({
