@@ -41,7 +41,7 @@ const taskController = {
     updateTask: async (req, res) => {
         try {
             const taskId = req.params.id;
-            const task = Task.findById(taskId);
+            const task = await Task.findById(taskId);
             task.task = req.body.text;
             await task.save();
 
