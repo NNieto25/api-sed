@@ -4,7 +4,7 @@ const taskController = {
     createTask: (req, res) => {
         try {
             const task = new Task({
-                text: req.body.text
+                task: req.body.text
             });
 
             task.save();
