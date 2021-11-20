@@ -42,7 +42,7 @@ const taskController = {
         try {
             const taskId = req.params.id;
             const task = Task.findById(taskId);
-            task.text = req.body.text;
+            task.task = req.body.text;
             await task.save();
 
             res.json({
